@@ -124,6 +124,12 @@ Contains statistics on excess mortality.
 | `excess_mortality_cumulative_absolute` | `numeric(16,8)`| Absolute number of
 
 ![Figure 1: Total Vaccinations per Continent](asset/total_vacination.png)
+
+## Python Code for Plotting Total Vaccinations per Continent
+
+Here is the Python code to plot the total vaccinations per continent using a bar chart:
+
+```python
 import pandas as pd
 import matplotlib.pyplot as plt
 from io import StringIO
@@ -157,3 +163,4 @@ for index, value in enumerate(df['total_vaccination_per_continent']):
     plt.text(index, value, f'{value:,.0f}', ha='center', va='bottom', fontsize=8, rotation=90)
 
 plt.show()
+
