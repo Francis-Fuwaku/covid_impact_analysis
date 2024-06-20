@@ -167,7 +167,7 @@ plt.show()
 
 
 
-![Figure 2: Total Deaths per Continent](asset/deaths_per_continent.png)
+![Figure 1: Total Deaths per Continent](asset/deaths_per_continent.png)
 
 ## Visualizing Total Deaths per Continent
 
