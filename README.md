@@ -122,3 +122,39 @@ Contains statistics on excess mortality.
 |------------------------------------|--------------|------------------------------------------------|
 | `_record_number`                   | `INT`        | Primary key, references `location_data`        |
 | `excess_mortality_cumulative_absolute` | `numeric(16,8)`| Absolute number of
+
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# CSV data as a string
+csv_data = """
+continent,total_vaccination_per_continent
+South America,183505526502.0
+Oceania,7807667239.0
+North America,239029400285.0
+Europe,298113668484.0
+Asia,1449217093883.0
+Africa,30000661774.0
+"""
+
+# Read the CSV data into a pandas DataFrame
+from io import StringIO
+df = pd.read_csv(StringIO(csv_data))
+
+# Plotting the data
+plt.figure(figsize=(10, 6))
+plt.bar(df['continent'], df['total_vaccination_per_continent'], color='green')
+plt.xlabel('Continent')
+plt.ylabel('Total Vaccinations')
+plt.title('Total Vaccinations per Continent')
+plt.xticks(rotation=45)
+plt.yscale('log')  # Optional: Log scale to better visualize large differences
+plt.tight_layout()
+
+# Annotate values
+for index, value in enumerate(df['total_vaccination_per_continent']):
+    plt.text(index, value, f'{value:,.0f}', ha='center', va='bottom', fontsize=8, rotation=90)
+
+plt.show()
