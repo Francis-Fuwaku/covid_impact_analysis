@@ -129,7 +129,7 @@ Contains statistics on excess mortality.
 
 The bar chart below shows the total number of vaccinations administered per continent:
 
-![Figure 1: Total Vaccinations per Continent](asset/total_vaccination.png)
+![Figure 1: Total Vaccinations per Continent](asset/total_vacination.png)
 
 ### Total Deaths per Continent
 
