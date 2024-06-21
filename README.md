@@ -178,6 +178,10 @@ for index, value in enumerate(df['total_vaccination_per_continent']):
 plt.show()
 
 
+
+
+![Figure 1: Total Deaths per Continent](asset/deaths_per_continent.png)
+
 ## Visualizing Total Deaths per Continent
 
 This Python code uses `pandas` and `matplotlib` to visualize the total deaths per continent as a bar chart.
