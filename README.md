@@ -138,6 +138,12 @@ The bar chart below illustrates the total number of deaths per continent:
 ![Figure 2: Total Deaths per Continent](asset/deaths_per_continent.png)
 
 
+##  Top 10 Locations in Africa by Life Expectancy
+The bar chart below illustrates  Top 10 Locations in Africa by Life Expectancy:
+
+![Figure 3: Top 10 Locations in Africa by Life Expectancy](asset/life_expectancy.png)
+
+
 ## Python Code for Plotting Total Vaccinations per Continent
 
 Here is the Python code to plot the total vaccinations per continent using a bar chart:
@@ -218,5 +224,36 @@ plt.tight_layout()
 # Annotate values
 for index, value in enumerate(df['deaths_per_continent']):
     plt.text(index, value, f'{value:,.0f}', ha='center', va='bottom', fontsize=8, rotation=90)
+
+plt.show()
+
+## Visualization: Top 10 Locations in Africa by Life Expectancy
+
+The following Python code visualizes the top 10 locations in Africa by life expectancy using a horizontal bar chart.
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {
+    'location': ['Mauritius', 'Seychelles', 'Tunisia', 'Algeria', 'Libya', 
+                 'Morocco', 'Cape Verde', 'Egypt', 'Namibia', 'Botswana'],
+    'life_expectancy': [75.9, 74.9, 74.6, 73.2, 72.7, 72.6, 72.3, 71.2, 69.6, 69.1]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Plotting the data
+plt.figure(figsize=(12, 8))
+plt.barh(df['location'], df['life_expectancy'], color='skyblue')
+plt.xlabel('Life Expectancy')
+plt.title('Top 10 Locations in Africa by Life Expectancy')
+plt.gca().invert_yaxis()  # Highest value at the top
+plt.tight_layout()
+
+# Annotate values
+for index, value in enumerate(df['life_expectancy']):
+    plt.text(value, index, f'{value:.1f}', ha='left', va='center', fontsize=10)
 
 plt.show()
